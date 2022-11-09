@@ -68,16 +68,28 @@ document.querySelectorAll("nav .links button").forEach((btn, index) => {
 
 
 // main buttons click
-const mainButton = document.querySelector('.btn-sec');
+const secButton = document.querySelector('.btn-sec');
 
-mainButton.addEventListener('click',()=>{
+secButton.addEventListener('click',()=>{
   if($(window).width() > 767){
     gsap.to(window, {duration: 0.8, scrollTo:{y:"#section2",offsetY:50}});
   }
   else if($(window).width() < 768){
     gsap.to(document.body, {duration: 0.8, scrollTo:{y:"#section2",offsetY:65}});
   }
-})
+});
+
+const mainButton = document.querySelector('.btn-main');
+
+mainButton.addEventListener('click',()=>{
+  if($(window).width() > 767){
+    gsap.to(window, {duration: 1, scrollTo:{y:"#section5"}});
+  }
+  else if($(window).width() < 768){
+    gsap.to(document.body, {duration: 1, scrollTo:{y:"#section5",offsetY:65}});
+  }
+});
+
 
 
 // scroll top after click logo desktop view
