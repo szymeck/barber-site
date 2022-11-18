@@ -3,7 +3,6 @@ const body = document.querySelector('body');
 const menu =document.getElementById('menu');
 
 
-
 // burger menu
 document.onclick=function(clickevent){
     if(clickevent.target.id !=='menu' && $(window).width() < 768 ) {
@@ -12,8 +11,6 @@ document.onclick=function(clickevent){
         gsap.set('body',{overflow:'auto'});
         gsap.set('body',{overflowX:'hidden'});
         gsap.set('svg',{pointerEvents:'auto'} );
-        burger.classList.add('active');
-       
     }
 
     else if(($(window).width() < 768)){
@@ -21,8 +18,7 @@ document.onclick=function(clickevent){
         gsap.to('.line',{stroke:'black'});
         gsap.fromTo('.links button',{opacity:0,y:-20},{opacity:1,y:0,delay:0.2,stagger:0.15});
         gsap.set("body",{overflow:"hidden"});
-        gsap.set('svg',{pointerEvents:'none'} );
-        burger.classList.toggle('active');
+        gsap.set('svg',{pointerEvents:'none'} );  
     }
 }
 
